@@ -120,14 +120,14 @@ class Cves:
 
                     elif self.unpatched.get(id):
                         # We have seen it before and it is still unpatched
-                        assesment = self.unpatched[id].get("assesment")
-                        if assesment is None:
-                            assesment = {}
+                        assessment = self.unpatched[id].get("assessment")
+                        if assessment is None:
+                            assessment = {}
 
-                        issue_data["assesment"] = assesment
+                        issue_data["assessment"] = assessment
                     else:
                         # This is a new CVE
-                        issue_data["assesment"] = {}
+                        issue_data["assessment"] = {}
                         self.changed['unpatched'].append(issue_data)
 
                     self.unpatched_now[id] = issue_data
